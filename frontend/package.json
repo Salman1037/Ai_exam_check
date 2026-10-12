@@ -1,0 +1,38 @@
+{
+  "name": "autocheck",
+  "version": "1.0.0",
+  "private": true,
+  "engines": {
+    "node": "22.x"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.57.0",
+    "lucide-react": "^0.468.0",
+    "next": "^16.4.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "@tailwindcss/postcss": "^4.3.3",
+    "@eslint/js": "^9.39.0",
+    "eslint": "^9.39.0",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "typescript-eslint": "^8.71.1",
+    "postcss": "^8.5.3",
+    "prettier": "^3.5.3",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^5.7.3"
+  }
+}
