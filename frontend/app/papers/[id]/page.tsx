@@ -81,7 +81,7 @@ function Detail({ id }: { id: string }) {
       {paper ? (
         <>
           <header className="mb-6 flex flex-wrap items-start justify-between gap-4">
-            <div>
+            <div className="min-w-0 max-w-full">
               <p className="muted text-xs uppercase tracking-widest">
                 {paper.subject || 'Test paper'}
               </p>
@@ -128,7 +128,7 @@ function Detail({ id }: { id: string }) {
               <p className="font-semibold">
                 Delete this paper and its results?
               </p>
-              <div className="mt-3 flex gap-2">
+              <div className="mt-3 flex flex-wrap gap-2">
                 <button
                   className="btn"
                   disabled={busy}
@@ -151,7 +151,7 @@ function Detail({ id }: { id: string }) {
               {paper.error_message}
             </p>
           )}
-          <div className="grid items-start gap-6 xl:grid-cols-[.85fr_1.15fr]">
+          <div className="grid min-w-0 items-start gap-6 xl:grid-cols-[minmax(0,.85fr)_minmax(0,1.15fr)]">
             <section className="surface overflow-hidden xl:sticky xl:top-6">
               <div className="divider flex items-center justify-between p-4">
                 <h2 className="text-sm font-bold">Original paper</h2>
@@ -185,7 +185,7 @@ function Detail({ id }: { id: string }) {
                 Private preview link expires after one hour. Refresh to renew.
               </p>
             </section>
-            <div>
+            <div className="min-w-0">
               {paper.status === 'done' ? (
                 <>
                   <section className="surface mb-5 flex flex-wrap items-center justify-between gap-5 p-6">
@@ -212,13 +212,13 @@ function Detail({ id }: { id: string }) {
                     const partial = q.marks > 0 && !correct;
                     return (
                       <article className="surface mb-4 p-5" key={q.q}>
-                        <div className="mb-3 flex items-center justify-between gap-2">
+                        <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
                           <span
                             className={`pill ${correct ? 'good' : partial ? 'warn' : 'bad'}`}
                           >
                             {correct ? '✓' : partial ? '◐' : '✗'} Question {q.q}
                           </span>
-                          <div className="flex items-center gap-2">
+                          <div className="flex flex-wrap items-center gap-2">
                             {q.confidence === 'low' && (
                               <span
                                 className="pill warn"
@@ -236,7 +236,7 @@ function Detail({ id }: { id: string }) {
                         <h3 className="whitespace-pre-wrap break-words text-sm font-semibold">
                           {q.question}
                         </h3>
-                        <div className="mt-4 grid gap-3 sm:grid-cols-2">
+                        <div className="answer-grid mt-4 grid gap-3">
                           <div
                             className="rounded-lg p-3"
                             style={{ background: 'var(--bg)' }}

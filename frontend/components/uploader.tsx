@@ -146,7 +146,7 @@ export function Uploader({ onUploaded }: { onUploaded: () => void }) {
             className="mt-3 rounded-lg p-3"
             style={{ background: 'var(--bg)' }}
           >
-            <div className="flex items-center gap-2 text-xs">
+            <div className="flex flex-wrap items-center gap-2 text-xs">
               {entry.error ? (
                 <X size={15} />
               ) : entry.progress === 100 ? (
@@ -162,10 +162,13 @@ export function Uploader({ onUploaded }: { onUploaded: () => void }) {
                   {entry.name}
                 </Link>
               ) : (
-                <span className="min-w-0 flex-1 truncate">{entry.name}</span>
+                <span className="min-w-0 flex-1 basis-20 truncate">
+                  {entry.name}
+                </span>
               )}
               <span>{entry.status}</span>
               <button
+                className="grid h-11 w-11 shrink-0 place-items-center rounded"
                 aria-label={`Dismiss ${entry.name}`}
                 disabled={!entry.error && entry.progress !== 100}
                 onClick={() =>

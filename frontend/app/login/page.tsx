@@ -108,15 +108,15 @@ export default function Login() {
     }
   }
   return (
-    <div className="mx-auto max-w-6xl px-6 py-7">
+    <div className="mx-auto max-w-6xl px-4 py-5 sm:px-6 sm:py-7">
       <header className="flex items-center justify-between">
         <Brand />
         <ThemeButton />
       </header>
-      <main className="grid min-h-[80vh] items-center gap-14 py-12 md:grid-cols-2">
+      <main className="grid min-h-[80vh] min-w-0 items-center gap-8 py-8 md:grid-cols-2 md:gap-14 md:py-12">
         <div>
           <span className="pill purple">Made for the everyday teacher</span>
-          <h1 className="mt-6 text-5xl font-bold leading-[1.13] tracking-tight">
+          <h1 className="mt-6 text-3xl font-bold leading-[1.13] tracking-tight sm:text-4xl lg:text-5xl">
             Give your time
             <br />
             back to teaching<span style={{ color: 'var(--accent)' }}>.</span>
@@ -138,7 +138,7 @@ export default function Login() {
             ))}
           </div>
         </div>
-        <section className="surface mx-auto w-full max-w-md p-7 sm:p-10">
+        <section className="surface mx-auto w-full max-w-md p-5 sm:p-8 lg:p-10">
           <h2 className="text-2xl font-bold">
             {signup ? 'Your classroom starts here' : 'Welcome back'}
           </h2>
@@ -192,7 +192,7 @@ export default function Login() {
                 />
                 <button
                   type="button"
-                  className="absolute right-3 top-1/2 -translate-y-1/2 rounded p-1"
+                  className="absolute right-1 top-1/2 grid h-11 w-11 -translate-y-1/2 place-items-center rounded"
                   aria-label={showPassword ? 'Hide password' : 'Show password'}
                   aria-pressed={showPassword}
                   aria-controls="password"
